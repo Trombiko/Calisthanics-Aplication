@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_menu"
+            android:icon="@drawable/ic_launcher_background"
+            android:title="Menu" />
+    </group>
+
+    <item android:title="Workout">
+        <menu>
+            <item
+                android:id="@+id/work_front"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Front Lever" />
+            <item
+                android:id="@+id/work_muscleup"
+                android:icon="@color/colorPrimary"
+                android:title="Muscle Up" />
+        </menu>
+
+    </item>
+    <item android:title="Exercises Information">
+        <menu>
+            <item
+                android:id="@+id/nav_front"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Front Lever" />
+            <item
+                android:id="@+id/nav_muscleup"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Muscle Up" />
+        </menu>
+    </item>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_test"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Test ">
+
+            </item>
+        </menu>
+    </item>
+
+</menu>

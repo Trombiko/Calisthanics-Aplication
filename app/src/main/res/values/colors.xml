@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#eb000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#545454</color>
+    <color name="textColor">#ffffff</color>
+    <color name="statusBarColor">#b20909</color>
+    <color name="backgroundAfterTraining">#15cf08</color>
+    <color name="backgroundNotAllowed">#ff0011</color>
+</resources>

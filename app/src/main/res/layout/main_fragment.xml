@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    android:paddingLeft="5dp"
+    android:paddingTop="5dp"
+    android:paddingRight="5dp"
+    android:paddingBottom="5dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/front"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/frontlevericon" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="20.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/front"
+                android:text="Front Lever"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="18.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/front"
+                android:layout_below="@id/textView1"
+                android:gravity="center_vertical"
+                android:text="Lvl 1: Tuck Front Lever"
+                android:textStyle="italic"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:scaleY="2"
+                android:max="100"
+                android:progress="0" />
+
+            <TextView
+                android:id="@+id/textWithProgress"
+                android:layout_width="120dp"
+                android:layout_height="14.5dp"
+                android:gravity="center"
+                android:layout_below="@id/progressBar"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:textSize="10.5dp"
+                android:text="0%"
+                android:textStyle="italic"/>
+
+
+            <LinearLayout
+                android:layout_below="@+id/textView2"
+                android:layout_marginTop="7dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/front"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/btnInfo1"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight=".4"
+                    android:onClick="onClick"
+                    app:srcCompat="@drawable/button"
+                    tools:ignore="OnClick" />
+
+                <ImageView
+                    android:id="@+id/btnTraining1"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight=".6"
+                    app:srcCompat="@drawable/buttonworkout" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/linia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/front"
+                app:srcCompat="@drawable/liniaczarna" />
+
+            <ImageView
+                android:id="@+id/muscleup"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/linia"
+                app:srcCompat="@drawable/muscleuppictogram" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="20.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/linia"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/muscleup"
+                android:text="Muscle Up"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="18.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/muscleup"
+                android:gravity="center_vertical"
+                android:layout_below="@id/textView3"
+                android:text="Lvl 1: Pull up"
+                android:textStyle="italic"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="4dp"
+                android:layout_below="@id/linia"
+                android:scaleY="2"
+                android:max="100"
+                android:progress="0" />
+            <TextView
+                android:id="@+id/textWithProgress2"
+                android:layout_width="120dp"
+                android:layout_height="14.5dp"
+                android:gravity="center"
+                android:layout_below="@id/progressBar2"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:textSize="11.5sp"
+                android:text="0%"
+                android:textStyle="italic"/>
+
+            <LinearLayout
+                android:layout_below="@+id/textView4"
+                android:layout_marginTop="7dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/front"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/btnInfo2"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight=".4"
+                    android:onClick="onClick"
+                    app:srcCompat="@drawable/button"
+                    tools:ignore="OnClick" />
+
+                <ImageView
+                    android:id="@+id/btnTraining2"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight=".6"
+                    app:srcCompat="@drawable/buttonworkout" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/linia2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/muscleup"
+                app:srcCompat="@drawable/liniaczarna" />
+
+
+            <ImageView
+                android:id="@+id/planche"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/linia2"
+                app:srcCompat="@drawable/planche_icon" />
+
+            <TextView
+                android:id="@+id/textPlanche"
+                android:layout_width="wrap_content"
+                android:layout_height="20.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/linia2"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/planche"
+                android:text="Planche"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textPlancheLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="18.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/planche"
+                android:gravity="center_vertical"
+                android:layout_below="@id/textPlanche"
+                android:text="Lvl 1: Frog Stand"
+                android:textStyle="italic"/>
+
+            <ProgressBar
+                android:id="@+id/progressBarPlanche"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="4dp"
+                android:layout_below="@id/linia2"
+                android:scaleY="2"
+                android:max="100"
+                android:progress="0" />
+            <TextView
+                android:id="@+id/textWithProgressPlanche"
+                android:layout_width="120dp"
+                android:layout_height="14.5dp"
+                android:gravity="center"
+                android:layout_below="@id/progressBarPlanche"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:textSize="11.5sp"
+                android:text="0%"
+                android:textStyle="italic"/>
+
+            <LinearLayout
+                android:layout_below="@+id/textPlancheLevel"
+                android:layout_marginTop="7dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/planche"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/btnInfo3"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight=".4"
+                    android:onClick="onClick"
+                    app:srcCompat="@drawable/button"
+                    tools:ignore="OnClick" />
+
+                <ImageView
+                    android:id="@+id/btnTraining3"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight=".6"
+                    app:srcCompat="@drawable/buttonworkout" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/linia3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/planche"
+                app:srcCompat="@drawable/liniaczarna" />
+
+            <ImageView
+                android:id="@+id/backLever"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/linia3"
+                app:srcCompat="@drawable/backlever" />
+
+            <TextView
+                android:id="@+id/textBack"
+                android:layout_width="wrap_content"
+                android:layout_height="20.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/linia3"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/backLever"
+                android:text="Back Lever"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textBackLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="18.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/backLever"
+                android:gravity="center_vertical"
+                android:layout_below="@id/textBack"
+                android:text="Lvl 1: Skin the Cat"
+                android:textStyle="italic"/>
+
+            <ProgressBar
+                android:id="@+id/progressBarBack"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="4dp"
+                android:layout_below="@id/linia3"
+                android:scaleY="2"
+                android:max="100"
+                android:progress="0" />
+            <TextView
+                android:id="@+id/textWithProgressBack"
+                android:layout_width="120dp"
+                android:layout_height="14.5dp"
+                android:gravity="center"
+                android:layout_below="@id/progressBarBack"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:textSize="11.5sp"
+                android:text="0%"
+                android:textStyle="italic"/>
+
+            <LinearLayout
+                android:layout_below="@+id/textBackLevel"
+                android:layout_marginTop="7dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/backLever"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/btnInfo4"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight=".4"
+                    android:onClick="onClick"
+                    app:srcCompat="@drawable/button"
+                    tools:ignore="OnClick" />
+
+                <ImageView
+                    android:id="@+id/btnTraining4"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight=".6"
+                    app:srcCompat="@drawable/buttonworkout" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/linia4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/backLever"
+                app:srcCompat="@drawable/liniaczarna" />
+
+            <ImageView
+                android:id="@+id/handStand"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/linia4"
+                app:srcCompat="@drawable/hs_pushup" />
+
+            <TextView
+                android:id="@+id/textHS"
+                android:layout_width="wrap_content"
+                android:layout_height="20.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/linia4"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/handStand"
+                android:text="Hand Stand Push Ups"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/textHSLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="18.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/handStand"
+                android:gravity="center_vertical"
+                android:layout_below="@id/textHS"
+                android:text="Lvl 1: Pike Push Up"
+                android:textStyle="italic"/>
+
+            <ProgressBar
+                android:id="@+id/progressBarHS"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="4dp"
+                android:layout_below="@id/linia4"
+                android:scaleY="2"
+                android:max="100"
+                android:progress="0" />
+            <TextView
+                android:id="@+id/textWithProgressHS"
+                android:layout_width="120dp"
+                android:layout_height="14.5dp"
+                android:gravity="center"
+                android:layout_below="@id/progressBarHS"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:textSize="11.5sp"
+                android:text="0%"
+                android:textStyle="italic"/>
+
+            <LinearLayout
+                android:layout_below="@+id/textHSLevel"
+                android:layout_marginTop="7dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/handStand"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/btnInfo5"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight=".4"
+                    android:onClick="onClick"
+                    app:srcCompat="@drawable/button"
+                    tools:ignore="OnClick" />
+
+                <ImageView
+                    android:id="@+id/btnTraining5"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_weight=".6"
+                    app:srcCompat="@drawable/buttonworkout" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/linia5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/handStand"
+                app:srcCompat="@drawable/liniaczarna" />
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+</RelativeLayout>

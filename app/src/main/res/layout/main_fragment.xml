@@ -38,14 +38,14 @@
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/textExerciseLevel"
                 android:layout_width="wrap_content"
                 android:layout_height="18.5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/front"
                 android:layout_below="@id/textView1"
                 android:gravity="center_vertical"
-                android:text="Lvl 1: Tuck Front Lever"
+                android:text="Lvl 1: Tuck Front Lever "
                 android:textStyle="italic"/>
 
             <ProgressBar
@@ -61,7 +61,7 @@
                 android:progress="0" />
 
             <TextView
-                android:id="@+id/textWithProgress"
+                android:id="@+id/percentProgress"
                 android:layout_width="120dp"
                 android:layout_height="14.5dp"
                 android:gravity="center"
@@ -74,7 +74,7 @@
 
 
             <LinearLayout
-                android:layout_below="@+id/textView2"
+                android:layout_below="@+id/textExerciseLevel"
                 android:layout_marginTop="7dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -135,7 +135,7 @@
                 android:layout_toRightOf="@+id/muscleup"
                 android:gravity="center_vertical"
                 android:layout_below="@id/textView3"
-                android:text="Lvl 1: Pull up"
+                android:text="Lvl 1: Pull up "
                 android:textStyle="italic"/>
 
             <ProgressBar
@@ -225,7 +225,7 @@
                 android:layout_toRightOf="@+id/planche"
                 android:gravity="center_vertical"
                 android:layout_below="@id/textPlanche"
-                android:text="Lvl 1: Frog Stand"
+                android:text="Lvl 1: Frog Stand "
                 android:textStyle="italic"/>
 
             <ProgressBar
@@ -314,7 +314,7 @@
                 android:layout_toRightOf="@+id/backLever"
                 android:gravity="center_vertical"
                 android:layout_below="@id/textBack"
-                android:text="Lvl 1: Skin the Cat"
+                android:text="Lvl 1: Skin the Cat "
                 android:textStyle="italic"/>
 
             <ProgressBar
@@ -403,7 +403,7 @@
                 android:layout_toRightOf="@+id/handStand"
                 android:gravity="center_vertical"
                 android:layout_below="@id/textHS"
-                android:text="Lvl 1: Pike Push Up"
+                android:text="Lvl 1: Pike Push Up "
                 android:textStyle="italic"/>
 
             <ProgressBar

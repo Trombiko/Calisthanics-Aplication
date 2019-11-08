@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="5dp"
+    android:paddingTop="5dp"
+    android:paddingRight="5dp"
+    android:paddingBottom="5dp">
+
+
+    <ImageView
+        android:id="@+id/imageExercise"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginLeft="10dp"
+        app:srcCompat="@drawable/frontlevericon" />
+
+    <TextView
+        android:id="@+id/textExercise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/imageExercise"
+        android:textSize="27dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="Front Lever" />
+
+    <TextView
+        android:id="@+id/textExerciseLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imageExercise"
+        android:layout_below="@+id/textExercise"
+        android:layout_marginTop="5dp"
+        android:textSize="15dp"
+        android:textStyle="italic"
+        android:gravity="center"
+        android:text="Lvl 1: Tuck Front Lever" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imageExercise"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="15dp"
+        android:layout_alignBottom="@+id/imageExercise"
+        android:max="100"
+        android:scaleY="4.5"
+        android:progress="0"/>
+
+    <TextView
+        android:id="@+id/textWithProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/imageExercise"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="16dp"
+        android:layout_alignBottom="@+id/imageExercise"
+        android:textColor="@color/textColor"
+        android:textSize="12dp"
+        android:text="Progress:"/>
+
+    <TextView
+        android:id="@+id/percentProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="7dp"
+        android:layout_marginBottom="16dp"
+        android:layout_alignBottom="@+id/imageExercise"
+        android:textSize="12dp"
+        android:text="0%" />
+
+    <ImageView
+        android:id="@+id/linia"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/imageExercise"
+        app:srcCompat="@drawable/liniaczarna" />
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLay"
+        android:layout_below="@+id/linia"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/testTraining"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="17.5dp"
+            android:layout_marginLeft="17.5dp"
+            android:gravity="center"
+            android:text="Przejdź do testu, który pomoże określić poziom na którym się znajdujesz"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btnTestTraining"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:layout_below="@id/testTraining"
+            android:text="Wykonaj test " />
+
+
+        <ImageView
+            android:id="@+id/liniaTestTraining"
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_marginTop="12dp"
+            android:layout_below="@id/btnTestTraining"
+            app:srcCompat="@drawable/liniaczarna" />
+
+    </RelativeLayout>
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/relativeLay"
+        android:layout_marginTop="5dp"
+        android:layout_centerInParent="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textTraining"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginTop="5dp"
+                android:layout_toLeftOf="@+id/btnTraining1"
+                android:gravity="center"
+                android:text="Lvl 1: Tuck Front Lever"
+                android:textStyle="bold"
+                android:layout_toStartOf="@+id/btnTraining1" />
+
+            <ImageView
+                android:id="@+id/images1"
+                android:layout_below="@+id/textTraining"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"
+                android:layout_height="60dp"
+                android:layout_toLeftOf="@+id/btnTraining1"
+                android:layout_marginLeft="15dp"
+                android:layout_weight=".33"
+                app:srcCompat="@drawable/frontlvl1" />
+
+            <Button
+                android:id="@+id/btnTraining1"
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/backgroundNotAllowed"
+                android:textStyle="bold"
+                android:text="Trening" />
+
+            <ImageView
+                android:id="@+id/linia2"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/images1"
+                app:srcCompat="@drawable/liniaczarna" />
+
+            <TextView
+                android:id="@+id/textTraining2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginTop="7dp"
+                android:layout_toLeftOf="@+id/btnTraining2"
+                android:gravity="center"
+                android:layout_below="@id/linia2"
+                android:text="Lvl 2: Advanced Tuck Front Lever"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/images2"
+                android:layout_below="@+id/textTraining2"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"
+                android:layout_height="60dp"
+                android:layout_toLeftOf="@+id/btnTraining2"
+                android:layout_marginLeft="15dp"
+                android:layout_weight=".33"
+                app:srcCompat="@drawable/frontlvl2" />
+
+            <Button
+                android:id="@+id/btnTraining2"
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="7dp"
+                android:layout_below="@id/linia2"
+                android:background="@color/backgroundNotAllowed"
+                android:textStyle="bold"
+                android:text="Trening" />
+
+            <ImageView
+                android:id="@+id/linia3"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/images2"
+                app:srcCompat="@drawable/liniaczarna" />
+
+            <TextView
+                android:id="@+id/textTraining3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:layout_marginTop="7dp"
+                android:layout_toLeftOf="@+id/btnTraining3"
+                android:gravity="center"
+                android:layout_below="@id/linia3"
+                android:text="Lvl 3: One Leg Front Lever"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/images3"
+                android:layout_below="@+id/textTraining3"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"
+                android:layout_height="60dp"
+                android:layout_toLeftOf="@+id/btnTraining3"
+                android:layout_marginLeft="15dp"
+                android:layout_weight=".33"
+                app:srcCompat="@drawable/frontlvl3" />
+
+            <Button
+                android:id="@+id/btnTraining3"
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="7dp"
+                android:layout_below="@id/linia3"
+                android:background="@color/backgroundNotAllowed"
+                android:textStyle="bold"
+                android:text="Trening" />
+
+
+            <ImageView
+                android:id="@+id/linia4"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/images3"
+                app:srcCompat="@drawable/liniaczarna" />
+
+            <TextView
+                android:id="@+id/textTraining4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:layout_marginTop="7dp"
+                android:layout_toLeftOf="@+id/btnTraining4"
+                android:gravity="center"
+                android:layout_below="@id/linia4"
+                android:text="Lvl 4: Front Lever"
+                android:textStyle="bold"/>
+
+
+            <ImageView
+                android:id="@+id/images4"
+                android:layout_below="@+id/textTraining4"
+                android:layout_width="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"
+                android:layout_height="60dp"
+                android:layout_toLeftOf="@+id/btnTraining4"
+                android:layout_marginLeft="15dp"
+                android:layout_weight=".33"
+                app:srcCompat="@drawable/frontlvl4" />
+
+
+            <Button
+                android:id="@+id/btnTraining4"
+                android:layout_width="wrap_content"
+                android:layout_height="85dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginTop="7dp"
+                android:layout_below="@id/linia4"
+                android:background="@color/backgroundNotAllowed"
+                android:textStyle="bold"
+                android:text="Trening" />
+
+            <ImageView
+                android:id="@+id/linia5"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/images4"
+                app:srcCompat="@drawable/liniaczarna" />
+
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

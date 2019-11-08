@@ -6,17 +6,31 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 public class MainPanelFragment extends Fragment implements View.OnClickListener
 {
+    ImageView btnInfo1, btnInfo2, btnInfo3, btnInfo4, btnInfo5;
+    ImageView btnTraining1, btnTraining2, btnTraining3, btnTraining4, btnTraining5;
+
+    int sendTrainingNumber = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
         View rootView = inflater.inflate(R.layout.main_fragment, container, false);
 
+        btnInfo1 = rootView.findViewById(R.id.btnInfo1); btnInfo1.setOnClickListener(this);
+        btnInfo2 = rootView.findViewById(R.id.btnInfo2); btnInfo2.setOnClickListener(this);
+        btnInfo3 = rootView.findViewById(R.id.btnInfo3); btnInfo3.setOnClickListener(this);
+        btnInfo4 = rootView.findViewById(R.id.btnInfo4); btnInfo4.setOnClickListener(this);
+        btnInfo5 = rootView.findViewById(R.id.btnInfo5); btnInfo5.setOnClickListener(this);
 
-
+        btnTraining1 = rootView.findViewById(R.id.btnTraining1); btnTraining1.setOnClickListener(this);
+        btnTraining2 = rootView.findViewById(R.id.btnTraining2); btnTraining2.setOnClickListener(this);
+        btnTraining3 = rootView.findViewById(R.id.btnTraining3); btnTraining3.setOnClickListener(this);
+        btnTraining4 = rootView.findViewById(R.id.btnTraining4); btnTraining4.setOnClickListener(this);
+        btnTraining5 = rootView.findViewById(R.id.btnTraining5); btnTraining5.setOnClickListener(this);
 
 
 
@@ -24,10 +38,82 @@ public class MainPanelFragment extends Fragment implements View.OnClickListener
     }
 
 
+    @Override
+    public void onStart()
+    {
+        super.onStart();
+
+        getActivity().setTitle("Menu Główne");
+    }
 
     @Override
-    public void onClick(View v)
+    public void onClick(View view)
     {
+        final LevelPanelFragment levelPanelFragment = new LevelPanelFragment();
+        Bundle args = new Bundle();
+
+
+        switch (view.getId())
+        {
+            case R.id.btnTraining1:
+                sendTrainingNumber = 1;
+                args.putInt("exercise choosen", sendTrainingNumber);
+                levelPanelFragment.setArguments(args);
+
+                getFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, levelPanelFragment)
+                        .addToBackStack(null)
+                        .commit();
+                break;
+
+            case R.id.btnTraining2:
+                sendTrainingNumber = 2;
+                args.putInt("exercise choosen", sendTrainingNumber);
+                levelPanelFragment.setArguments(args);
+
+                getFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, levelPanelFragment)
+                        .addToBackStack(null)
+                        .commit();
+                break;
+
+            case R.id.btnTraining3:
+                sendTrainingNumber = 3;
+                args.putInt("exercise choosen", sendTrainingNumber);
+                levelPanelFragment.setArguments(args);
+
+                getFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, levelPanelFragment)
+                        .addToBackStack(null)
+                        .commit();
+                break;
+
+            case R.id.btnTraining4:
+                sendTrainingNumber = 4;
+                args.putInt("exercise choosen", sendTrainingNumber);
+                levelPanelFragment.setArguments(args);
+
+                getFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, levelPanelFragment)
+                        .addToBackStack(null)
+                        .commit();
+                break;
+
+            case R.id.btnTraining5:
+                sendTrainingNumber = 5;
+                args.putInt("exercise choosen", sendTrainingNumber);
+                levelPanelFragment.setArguments(args);
+
+                getFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, levelPanelFragment)
+                        .addToBackStack(null)
+                        .commit();
+                break;
+
+                //TODO:   buttons Info!!!
+        }
+
+
 
     }
 }

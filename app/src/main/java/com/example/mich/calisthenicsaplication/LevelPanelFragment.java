@@ -72,6 +72,15 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
             case 2:
                 muscleUpLevelsPage();
                 break;
+            case 3:
+                plancheLevelsPage();
+                break;
+            case 4:
+                backLevelsPage();
+                break;
+            case 5:
+                handStandLevelsPage();
+                break;
             default:
                 break;
         }
@@ -93,7 +102,25 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
                 textExerciseLvl2.setText("Lvl 2: High Pull Up");
                 textExerciseLvl3.setText("Lvl 3: Kipping Muscle Up");
                 textExerciseLvl4.setText("Lvl 4: Muscle Up");
-
+                break;
+            case 3:
+                textExerciseLvl1.setText("Lvl 1: Tuck Planche");
+                textExerciseLvl2.setText("Lvl 2: Advanced Tuck Planche");
+                textExerciseLvl3.setText("Lvl 3: Straddle Planche");
+                textExerciseLvl4.setText("Lvl 4: Planche");
+                break;
+            case 4:
+                textExerciseLvl1.setText("Lvl 1: Skin the Cat");
+                textExerciseLvl2.setText("Lvl 2: Tuck Back Lever");
+                textExerciseLvl3.setText("Lvl 3: Adcanced Back Lever");
+                textExerciseLvl4.setText("Lvl 4: Back Lever");
+                break;
+            case 5:
+                textExerciseLvl1.setText("Lvl 1: Pike Push Ups");
+                textExerciseLvl2.setText("Lvl 2: Advanced Pike Push Ups");
+                textExerciseLvl3.setText("Lvl 3: Wall Hand Stand Push Ups");
+                textExerciseLvl4.setText("Lvl 4: Hand Stand Push Ups");
+                break;
         }
     }
 
@@ -103,9 +130,6 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
     @Override
     public void onClick(View view)
     {
-
-
-
         switch (view.getId())
         {
             case R.id.btnTestTraining:
@@ -126,7 +150,7 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
 
         if (idFront != 0)
         {
-            relativeLayout.setVisibility(View.GONE); // TODO: DO ODBLOKOWANIA NA SAMYM KONCU
+            relativeLayout.setVisibility(View.GONE);
         }
 
         switch (idFront)
@@ -150,7 +174,6 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
             case 5:
                 onSwitchCase4Common();
                 onSwitchCase5Common();
-                textLvl.setText("Element nauczony");
         }
     }
 
@@ -163,6 +186,11 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
 
         SharedPreferences prefMuscleUp = getActivity().getSharedPreferences("NAME_MUSCLE_UP", 0);
         int idMuscleUp = prefMuscleUp.getInt("keyMU",0);
+
+        if (idMuscleUp != 0)
+        {
+            relativeLayout.setVisibility(View.GONE);
+        }
 
         switch (idMuscleUp)
         {
@@ -182,9 +210,128 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
                 onSwitchCase4Common();
                 textLvl.setText("Lvl 4: Muscle Up");
                 break;
+            case 5:
+                onSwitchCase4Common();
+                onSwitchCase5Common();
         }
     }
 
+    public void plancheLevelsPage()
+    {
+        imageExercise.setImageDrawable(getResources().getDrawable(R.drawable.planche_icon));
+        textExercise.setText("Planche");
+        textLvl.setText("Lvl 1: Tuck Planche");
+        onChangeExercise(); // zmieniamy tekst z fronta na planche
+
+        SharedPreferences prefPlanche = getActivity().getSharedPreferences("NAME_PLANCHE", 0);
+        int idPlanche = prefPlanche.getInt("keyPlanche",0);
+
+        if (idPlanche != 0)
+        {
+            relativeLayout.setVisibility(View.GONE);
+        }
+
+        switch (idPlanche)
+        {
+            case 1:
+                onSwitchCase1Common();
+                textLvl.setText("Lvl 1: Tuck Planche");
+                break;
+            case 2:
+                onSwitchCase2Common();
+                textLvl.setText("Lvl 2: Advanced Tuck Planche");
+                break;
+            case 3:
+                onSwitchCase3Common();
+                textLvl.setText("Lvl 3: Straddle Planche");
+                break;
+            case 4:
+                onSwitchCase4Common();
+                textLvl.setText("Lvl 4: Planche");
+                break;
+            case 5:
+                onSwitchCase4Common();
+                onSwitchCase5Common();
+        }
+    }
+
+    public void backLevelsPage()
+    {
+        imageExercise.setImageDrawable(getResources().getDrawable(R.drawable.backlever));
+        textExercise.setText("Back Lever");
+        textLvl.setText("Lvl 1: Skin the Cat");
+        onChangeExercise(); // zmieniamy tekst z fronta na backa
+
+        SharedPreferences prefBack = getActivity().getSharedPreferences("NAME_BACK", 0);
+        int idBackLever = prefBack.getInt("keyBack",0);
+
+        if (idBackLever != 0)
+        {
+            relativeLayout.setVisibility(View.GONE);
+        }
+
+        switch (idBackLever)
+        {
+            case 1:
+                onSwitchCase1Common();
+                textLvl.setText("Lvl 1: Skin the Cat");
+                break;
+            case 2:
+                onSwitchCase2Common();
+                textLvl.setText("Lvl 2: Tuck Back Lever");
+                break;
+            case 3:
+                onSwitchCase3Common();
+                textLvl.setText("Lvl 3: Advanced Tuck Back Lever");
+                break;
+            case 4:
+                onSwitchCase4Common();
+                textLvl.setText("Lvl 4: Back Lever");
+                break;
+            case 5:
+                onSwitchCase4Common();
+                onSwitchCase5Common();
+        }
+    }
+
+    public void handStandLevelsPage()
+    {
+        imageExercise.setImageDrawable(getResources().getDrawable(R.drawable.hs_pushup));
+        textExercise.setText("Hand Stand Push Ups");
+        textLvl.setText("Lvl 1: Pike Push Ups");
+        onChangeExercise(); // zmieniamy tekst z fronta na HAND STAND
+
+        SharedPreferences prefHandStandPU = getActivity().getSharedPreferences("NAME_HS", 0);
+        int idHandStand = prefHandStandPU.getInt("keyHS",0);
+
+//        if (idHandStand != 0)
+//        {
+//            relativeLayout.setVisibility(View.GONE);
+//        }
+
+        switch (idHandStand)
+        {
+            case 1:
+                onSwitchCase1Common();
+                textLvl.setText("Lvl 1: Pike Push Ups");
+                break;
+            case 2:
+                onSwitchCase2Common();
+                textLvl.setText("Lvl 2: Advanced Pike Push Ups");
+                break;
+            case 3:
+                onSwitchCase3Common();
+                textLvl.setText("Lvl 3: Wall Hand Stand Push Ups");
+                break;
+            case 4:
+                onSwitchCase4Common();
+                textLvl.setText("Lvl 4: Hand Stand Push Ups");
+                break;
+            case 5:
+                onSwitchCase4Common();
+                onSwitchCase5Common();
+        }
+    }
 
     public void onSwitchCase1Common()
     {
@@ -236,5 +383,6 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
         btn4.setBackgroundColor(getResources().getColor(R.color.backgroundAfterTraining));
         progressBar.setProgress(100);
         textWithProgress.setText("100%");
+        textLvl.setText("Element Nauczony");
     }
 }

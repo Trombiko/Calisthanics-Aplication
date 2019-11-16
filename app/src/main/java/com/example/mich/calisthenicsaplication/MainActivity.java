@@ -1,5 +1,6 @@
 package com.example.mich.calisthenicsaplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -50,17 +51,49 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (item.getItemId())
         {
             case R.id.nav_menu:
-                // TODO: Akcja do uzupełnienia
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new MainPanelFragment())
+                        .addToBackStack(null)
+                        .commit();// przelaczamy sie miedzy fragmentami do Menu Głównego
                 break;
+
             case R.id.nav_front:
-                // TODO: Akcja do uzupełnienia
+                Intent intent1 = new Intent(MainActivity.this, InfoPanelActivity.class);
+                int x1 = 1; // wlaczy panel informujacy z cwiczeniem numer 1
+                intent1.putExtra("info_number", x1);
+                startActivity(intent1);
                 break;
             case R.id.nav_muscleup:
-                // TODO: Akcja do uzupełnienia
+                Intent intent2 = new Intent(MainActivity.this, InfoPanelActivity.class);
+                int x2 = 2; // wlaczy panel informujacy z cwiczeniem numer 2
+                intent2.putExtra("info_number", x2);
+                startActivity(intent2);
+                break;
+            case R.id.nav_planche:
+                Intent intent3 = new Intent(MainActivity.this, InfoPanelActivity.class);
+                int x3 = 3; // wlaczy panel informujacy z cwiczeniem numer 3
+                intent3.putExtra("info_number", x3);
+                startActivity(intent3);
+                break;
+            case R.id.nav_back:
+                Intent intent4 = new Intent(MainActivity.this, InfoPanelActivity.class);
+                int x4 = 4;
+                intent4.putExtra("info_number", x4);
+                startActivity(intent4);
+                break;
+            case R.id.nav_hs:
+                Intent intent5 = new Intent(MainActivity.this, InfoPanelActivity.class);
+                int x5 = 5;
+                intent5.putExtra("info_number", x5);
+                startActivity(intent5);
                 break;
             case R.id.nav_test:
-                // TODO: Akcja do uzupełnienia
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new FormLevelFragment())
+                        .addToBackStack(null)
+                        .commit();// przelaczamy sie miedzy fragmentami do Testu
                 break;
+
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;

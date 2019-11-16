@@ -6,45 +6,34 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_menu"
-            android:icon="@drawable/ic_launcher_background"
+            android:icon="@drawable/ic_home"
             android:title="Menu" />
-    </group>
 
-    <item android:title="Workout">
-        <menu>
             <item
-                android:id="@+id/work_front"
-                android:icon="@drawable/ic_menu_manage"
-                android:title="Front Lever" />
-            <item
-                android:id="@+id/work_muscleup"
-                android:icon="@color/colorPrimary"
-                android:title="Muscle Up" />
-        </menu>
-
-    </item>
-    <item android:title="Exercises Information">
-        <menu>
+                android:icon="@drawable/ic_info"
+                android:title="Informacje o ćwiczeniach" />
             <item
                 android:id="@+id/nav_front"
-                android:icon="@drawable/ic_menu_send"
                 android:title="Front Lever" />
             <item
                 android:id="@+id/nav_muscleup"
-                android:icon="@drawable/ic_menu_send"
                 android:title="Muscle Up" />
-        </menu>
-    </item>
+            <item
+                android:id="@+id/nav_planche"
+                android:title="Planche" />
+            <item
+                android:id="@+id/nav_back"
+                android:title="Back Lever" />
+            <item
+                android:id="@+id/nav_hs"
+                android:title="Hand Stand Push Ups" />
+    </group>
 
-    <item android:title="">
-        <menu>
             <item
                 android:id="@+id/nav_test"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_fitness_center_black_24dp"
                 android:title="Test ">
 
             </item>
-        </menu>
-    </item>
 
 </menu>

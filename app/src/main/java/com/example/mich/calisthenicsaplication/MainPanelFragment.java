@@ -1,15 +1,20 @@
 package com.example.mich.calisthenicsaplication;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 public class MainPanelFragment extends Fragment implements View.OnClickListener
 {
+    RelativeLayout relativeLay;
+    ImageView lifeStyleLogo;
     ImageView btnInfo1, btnInfo2, btnInfo3, btnInfo4, btnInfo5;
     ImageView btnTraining1, btnTraining2, btnTraining3, btnTraining4, btnTraining5;
 
@@ -32,10 +37,23 @@ public class MainPanelFragment extends Fragment implements View.OnClickListener
         btnTraining4 = rootView.findViewById(R.id.btnTraining4); btnTraining4.setOnClickListener(this);
         btnTraining5 = rootView.findViewById(R.id.btnTraining5); btnTraining5.setOnClickListener(this);
 
+        
+//        relativeLay = rootView.findViewById(R.id.relativeLay);
+//        lifeStyleLogo = rootView.findViewById(R.id.lifeStyleLogo);
+//        logoStart();
 
 
         return rootView;
     }
+
+//    public void logoStart()
+//    {
+//        relativeLay.setVisibility(View.GONE);
+//        Handler handler = new Handler();
+//        handler.postDelayed(new Runnable() {
+//            public void run() {lifeStyleLogo.setVisibility(View.GONE); relativeLay.setVisibility(View.VISIBLE);}
+//        }, 5000);   //5 seconds
+//    }
 
 
     @Override
@@ -110,7 +128,45 @@ public class MainPanelFragment extends Fragment implements View.OnClickListener
                         .commit();
                 break;
 
-                //TODO:   buttons Info!!!
+            case R.id.btnInfo1:
+                Intent intent1 = new Intent(getActivity().getApplication(),InfoPanelActivity.class);
+                int x1 = 1; // wlaczy panel informujacy z cwiczeniem numer 1
+                intent1.putExtra("info_number", x1);
+                getActivity().finish();
+                startActivity(intent1);
+                break;
+
+            case R.id.btnInfo2:
+                Intent intent2 = new Intent(getActivity().getApplication(),InfoPanelActivity.class);
+                int x2 = 2; // wlaczy panel informujacy z cwiczeniem numer 1
+                intent2.putExtra("info_number", x2);
+                getActivity().finish();
+                startActivity(intent2);
+                break;
+
+            case R.id.btnInfo3:
+                Intent intent3 = new Intent(getActivity().getApplication(),InfoPanelActivity.class);
+                int x3 = 3; // wlaczy panel informujacy z cwiczeniem numer 1
+                intent3.putExtra("info_number", x3);
+                getActivity().finish();
+                startActivity(intent3);
+                break;
+
+            case R.id.btnInfo4:
+                Intent intent4 = new Intent(getActivity().getApplication(),InfoPanelActivity.class);
+                int x4= 4; // wlaczy panel informujacy z cwiczeniem numer 1
+                intent4.putExtra("info_number", x4);
+                getActivity().finish();
+                startActivity(intent4);
+                break;
+
+            case R.id.btnInfo5:
+                Intent intent5 = new Intent(getActivity().getApplication(),InfoPanelActivity.class);
+                int x5 = 5; // wlaczy panel informujacy z cwiczeniem numer 1
+                intent5.putExtra("info_number", x5);
+                getActivity().finish();
+                startActivity(intent5);
+                break;
         }
 
 

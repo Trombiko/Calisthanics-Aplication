@@ -102,24 +102,44 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
                 textExerciseLvl2.setText("Lvl 2: High Pull Up");
                 textExerciseLvl3.setText("Lvl 3: Kipping Muscle Up");
                 textExerciseLvl4.setText("Lvl 4: Muscle Up");
+
+                exercises1.setImageDrawable(getResources().getDrawable(R.drawable.muscleuplvl1));
+                exercises2.setImageDrawable(getResources().getDrawable(R.drawable.muscleuplvl2));
+                exercises3.setImageDrawable(getResources().getDrawable(R.drawable.muscleuplvl3));
+                exercises4.setImageDrawable(getResources().getDrawable(R.drawable.muscleuplvl4));
                 break;
             case 3:
                 textExerciseLvl1.setText("Lvl 1: Tuck Planche");
                 textExerciseLvl2.setText("Lvl 2: Advanced Tuck Planche");
                 textExerciseLvl3.setText("Lvl 3: Straddle Planche");
                 textExerciseLvl4.setText("Lvl 4: Planche");
+
+                exercises1.setImageDrawable(getResources().getDrawable(R.drawable.planchelvl1));
+                exercises2.setImageDrawable(getResources().getDrawable(R.drawable.planchelvl2));
+                exercises3.setImageDrawable(getResources().getDrawable(R.drawable.planchelvl3));
+                exercises4.setImageDrawable(getResources().getDrawable(R.drawable.planchelvl4));
                 break;
             case 4:
                 textExerciseLvl1.setText("Lvl 1: Skin the Cat");
                 textExerciseLvl2.setText("Lvl 2: Tuck Back Lever");
                 textExerciseLvl3.setText("Lvl 3: Adcanced Back Lever");
                 textExerciseLvl4.setText("Lvl 4: Back Lever");
+
+                exercises1.setImageDrawable(getResources().getDrawable(R.drawable.backlvl1));
+                exercises2.setImageDrawable(getResources().getDrawable(R.drawable.backlvl2));
+                exercises3.setImageDrawable(getResources().getDrawable(R.drawable.backlvl3));
+                exercises4.setImageDrawable(getResources().getDrawable(R.drawable.backlvl4));
                 break;
             case 5:
                 textExerciseLvl1.setText("Lvl 1: Pike Push Ups");
                 textExerciseLvl2.setText("Lvl 2: Advanced Pike Push Ups");
                 textExerciseLvl3.setText("Lvl 3: Wall Hand Stand Push Ups");
                 textExerciseLvl4.setText("Lvl 4: Hand Stand Push Ups");
+
+                exercises1.setImageDrawable(getResources().getDrawable(R.drawable.hslvl1));
+                exercises2.setImageDrawable(getResources().getDrawable(R.drawable.hslvl2));
+                exercises3.setImageDrawable(getResources().getDrawable(R.drawable.hslvl3));
+                exercises4.setImageDrawable(getResources().getDrawable(R.drawable.hslvl4));
                 break;
         }
     }

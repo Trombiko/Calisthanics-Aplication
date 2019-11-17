@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,8 +14,6 @@ import android.widget.RelativeLayout;
 
 public class MainPanelFragment extends Fragment implements View.OnClickListener
 {
-    RelativeLayout relativeLay;
-    ImageView lifeStyleLogo;
     ImageView btnInfo1, btnInfo2, btnInfo3, btnInfo4, btnInfo5;
     ImageView btnTraining1, btnTraining2, btnTraining3, btnTraining4, btnTraining5;
 
@@ -37,23 +36,8 @@ public class MainPanelFragment extends Fragment implements View.OnClickListener
         btnTraining4 = rootView.findViewById(R.id.btnTraining4); btnTraining4.setOnClickListener(this);
         btnTraining5 = rootView.findViewById(R.id.btnTraining5); btnTraining5.setOnClickListener(this);
 
-        
-//        relativeLay = rootView.findViewById(R.id.relativeLay);
-//        lifeStyleLogo = rootView.findViewById(R.id.lifeStyleLogo);
-//        logoStart();
-
-
         return rootView;
     }
-
-//    public void logoStart()
-//    {
-//        relativeLay.setVisibility(View.GONE);
-//        Handler handler = new Handler();
-//        handler.postDelayed(new Runnable() {
-//            public void run() {lifeStyleLogo.setVisibility(View.GONE); relativeLay.setVisibility(View.VISIBLE);}
-//        }, 5000);   //5 seconds
-//    }
 
 
     @Override

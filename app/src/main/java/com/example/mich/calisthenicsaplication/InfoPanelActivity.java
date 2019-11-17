@@ -111,24 +111,24 @@ public class InfoPanelActivity extends YouTubeBaseActivity
         switch(whatNumberDidIGet)
         {
             case 1:
-                textView1.setText("FRONT LEVER \n Mięśnie zaangażowane:");
-                imageHowHard.setImageDrawable(getResources().getDrawable(R.drawable.ekspertbutton));
+                textView1.setText("  FRONT LEVER \n Mięśnie zaangażowane:");
+                imageHowHard.setImageDrawable(getResources().getDrawable(R.drawable.zaawansowanybutton));
                 break;
             case 2:
-                textView1.setText("MUSCLE UP \n Mięśnie zaangażowane:");
+                textView1.setText("  MUSCLE UP \n Mięśnie zaangażowane:");
                 imageHowHard.setImageDrawable(getResources().getDrawable(R.drawable.zaawansowanybutton));
                 break;
             case 3:
-
-
+                textView1.setText("  PLANCHE \n Mięśnie zaangażowane:");
+                imageHowHard.setImageDrawable(getResources().getDrawable(R.drawable.ekspertbutton));
                 break;
             case 4:
-
-
+                textView1.setText("  BACK LEVER \n Mięśnie zaangażowane:");
+                imageHowHard.setImageDrawable(getResources().getDrawable(R.drawable.zaawansowanybutton));
                 break;
             case 5:
-
-
+                textView1.setText("  HAND STAND PUSH UPS \n Mięśnie zaangażowane:");
+                imageHowHard.setImageDrawable(getResources().getDrawable(R.drawable.zaawansowanybutton));
                 break;
         }
 
@@ -151,16 +151,16 @@ public class InfoPanelActivity extends YouTubeBaseActivity
                 tekst2 = "ruchMuscleUpPL.txt";
                 break;
             case 3:
-
-
+                tekst1 = "miesniePlanchePL.txt";
+                tekst2 = "ruchPlanchePL.txt";
                 break;
             case 4:
-
-
+                tekst1 = "miesnieBackLeverPL.txt";
+                tekst2 = "ruchBackLeverPL.txt";
                 break;
             case 5:
-
-
+                tekst1 = "miesnieHandStandPL.txt";
+                tekst2 = "ruchHandStandPL.txt";
                 break;
         }
     }
@@ -222,6 +222,7 @@ public class InfoPanelActivity extends YouTubeBaseActivity
     public void onClickBtnBack(View v)
     {
         Intent intent = new Intent(InfoPanelActivity.this, MainActivity.class);
+        intent.putExtra("logo_number", 1);
         finish();
         startActivity(intent);
     }
@@ -229,6 +230,7 @@ public class InfoPanelActivity extends YouTubeBaseActivity
     @Override
     public void onBackPressed() {
         Intent intent = new Intent(InfoPanelActivity.this, MainActivity.class);
+        intent.putExtra("logo_number", 1);
         finish();
         startActivity(intent);
         super.onBackPressed();

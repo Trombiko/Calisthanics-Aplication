@@ -2,8 +2,10 @@ package com.example.mich.calisthenicsaplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentContainer;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -11,10 +13,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
     private DrawerLayout drawer;
+    LinearLayout linear1;
+    Toolbar toolbar;
+    ImageView lifeStyleLogo;
+    FrameLayout frameLayout;
+    int counting = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -23,7 +35,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setTitle("Menu Główne");
         setContentView(R.layout.menu_fragment);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+       // linear1 = findViewById(R.id.linear1);
+        lifeStyleLogo = findViewById(R.id.lifeStyleLogo);
+        frameLayout = findViewById(R.id.fragment_container);
+
+
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         drawer = findViewById(R.id.drawer_layout);
@@ -38,15 +55,37 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if(savedInstanceState == null)
         {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MainPanelFragment()).commit();
-        }
+            counting = getIntent().getIntExtra("logo_number",0);
+            if(counting == 0)
+            {
+                logoStart();
+                counting++;
+            }else
+            {
+                lifeStyleLogo.setVisibility(View.GONE);
+                toolbar.setVisibility(View.VISIBLE);
+                frameLayout.setVisibility(View.VISIBLE);
+            }
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MainPanelFragment()).commit();
+            }
+    }
+
+    public void logoStart()
+    {
+        toolbar.setVisibility(View.GONE);
+        frameLayout.setVisibility(View.GONE);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {lifeStyleLogo.setVisibility(View.GONE); frameLayout.setVisibility(View.VISIBLE);toolbar.setVisibility(View.VISIBLE);}
+        }, 2500);   //2.5 seconds
     }
 
 
 
 
     @Override
-    public boolean onNavigationItemSelected(MenuItem item)
+    public boolean onNavigationItemSelected(@NonNull MenuItem item)
     {
         switch (item.getItemId())
         {

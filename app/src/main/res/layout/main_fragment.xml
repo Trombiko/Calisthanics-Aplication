@@ -40,7 +40,7 @@
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/textExerciseLevel"
+                android:id="@+id/textFrontLvl"
                 android:layout_width="wrap_content"
                 android:layout_height="18.5dp"
                 android:layout_marginLeft="10dp"
@@ -76,7 +76,7 @@
 
 
             <LinearLayout
-                android:layout_below="@+id/textExerciseLevel"
+                android:layout_below="@+id/textFrontLvl"
                 android:layout_marginTop="7dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -130,7 +130,7 @@
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textMuscleUpLvl"
                 android:layout_width="wrap_content"
                 android:layout_height="18.5dp"
                 android:layout_marginLeft="10dp"
@@ -165,7 +165,7 @@
                 android:textStyle="italic"/>
 
             <LinearLayout
-                android:layout_below="@+id/textView4"
+                android:layout_below="@+id/textMuscleUpLvl"
                 android:layout_marginTop="7dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

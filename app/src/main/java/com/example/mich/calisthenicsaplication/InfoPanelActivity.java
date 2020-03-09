@@ -16,6 +16,7 @@ import com.google.android.youtube.player.YouTubePlayerView;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Locale;
 
 public class InfoPanelActivity extends YouTubeBaseActivity
 {
@@ -53,7 +54,7 @@ public class InfoPanelActivity extends YouTubeBaseActivity
         textView1 = findViewById(R.id.textView1);
         textView2 = findViewById(R.id.textView2);
         textView3 = findViewById(R.id.textView3);
-        textView4 = findViewById(R.id.textView4);
+        textView4 = findViewById(R.id.textMuscleUpLvl);
         imageHowHard = findViewById(R.id.imageView1);
     }
 
@@ -67,7 +68,14 @@ public class InfoPanelActivity extends YouTubeBaseActivity
         whatYoutubeWillShow();
 
         mYouTubePlayerView.initialize(getApiKey(), mOnInitializedListener);
-        setPolishText();
+
+        if (Locale.getDefault().getLanguage().
+                equals(new Locale("en").getLanguage())) {
+            setEnglishText();
+        }else{
+            setPolishText();
+        }
+
     }
 
     public void whatYoutubeWillShow()
@@ -105,6 +113,36 @@ public class InfoPanelActivity extends YouTubeBaseActivity
         };
     }
 
+    public void setEnglishText()
+    {
+        switch (whatNumberDidIGet)
+        {
+            case 1:
+                textView1.setText("  FRONT LEVER \n Muscles involved:");
+                imageHowHard.setImageDrawable(getResources().getDrawable(R.drawable.advancedbutton));
+                break;
+            case 2:
+                textView1.setText("  MUSCLE UP \n Muscles involved:");
+                imageHowHard.setImageDrawable(getResources().getDrawable(R.drawable.advancedbutton));
+                break;
+            case 3:
+                textView1.setText("  PLANCHE \n Muscles involved:");
+                imageHowHard.setImageDrawable(getResources().getDrawable(R.drawable.expertbutton));
+                break;
+            case 4:
+                textView1.setText("  BACK LEVER \n Muscles involved:");
+                imageHowHard.setImageDrawable(getResources().getDrawable(R.drawable.advancedbutton));
+                break;
+            case 5:
+                textView1.setText("  HAND STAND PUSH UPS \n Muscles involved:");
+                imageHowHard.setImageDrawable(getResources().getDrawable(R.drawable.advancedbutton));
+                break;
+        }
+
+        textView2.setText(text);
+        textView3.setText(" Move: ");
+        textView4.setText(text2);
+    }
 
     public void setPolishText()
     {
@@ -127,7 +165,7 @@ public class InfoPanelActivity extends YouTubeBaseActivity
                 imageHowHard.setImageDrawable(getResources().getDrawable(R.drawable.zaawansowanybutton));
                 break;
             case 5:
-                textView1.setText("  HAND STAND PUSH UPS \n Mięśnie zaangażowane:");
+                textView1.setText("  POMPKI W STANIU NA RĘKACH \n Mięśnie zaangażowane:");
                 imageHowHard.setImageDrawable(getResources().getDrawable(R.drawable.zaawansowanybutton));
                 break;
         }
@@ -140,48 +178,86 @@ public class InfoPanelActivity extends YouTubeBaseActivity
 
     public void whatTextHaveToRead()
     {
-        switch(whatNumberDidIGet)
+        if (Locale.getDefault().getLanguage().equals(new Locale("en").getLanguage()))
         {
-            case 1:
-                tekst1 = "miesnieFrontLeverPL.txt";
-                tekst2 = "ruchFrontLeverPL.txt";
-                break;
-            case 2:
-                tekst1 = "miesnieMuscleUpPL.txt";
-                tekst2 = "ruchMuscleUpPL.txt";
-                break;
-            case 3:
-                tekst1 = "miesniePlanchePL.txt";
-                tekst2 = "ruchPlanchePL.txt";
-                break;
-            case 4:
-                tekst1 = "miesnieBackLeverPL.txt";
-                tekst2 = "ruchBackLeverPL.txt";
-                break;
-            case 5:
-                tekst1 = "miesnieHandStandPL.txt";
-                tekst2 = "ruchHandStandPL.txt";
-                break;
+            switch(whatNumberDidIGet)
+            {
+                case 1:
+                    tekst1 = "miesnieFrontLeverENG.txt";
+                    tekst2 = "ruchFrontLeverENG.txt";
+                    break;
+                case 2:
+                    tekst1 = "miesnieMuscleUpENG.txt";
+                    tekst2 = "ruchMuscleUpENG.txt";
+                    break;
+                case 3:
+                    tekst1 = "miesniePlancheENG.txt";
+                    tekst2 = "ruchPlancheENG.txt";
+                    break;
+                case 4:
+                    tekst1 = "miesnieBackLeverENG.txt";
+                    tekst2 = "ruchBackLeverENG.txt";
+                    break;
+                case 5:
+                    tekst1 = "miesnieHandStandENG.txt";
+                    tekst2 = "ruchHandStandENG.txt";
+                    break;
+            }
+        }else
+        {
+            switch(whatNumberDidIGet)
+            {
+                case 1:
+                    tekst1 = "miesnieFrontLeverPL.txt";
+                    tekst2 = "ruchFrontLeverPL.txt";
+                    break;
+                case 2:
+                    tekst1 = "miesnieMuscleUpPL.txt";
+                    tekst2 = "ruchMuscleUpPL.txt";
+                    break;
+                case 3:
+                    tekst1 = "miesniePlanchePL.txt";
+                    tekst2 = "ruchPlanchePL.txt";
+                    break;
+                case 4:
+                    tekst1 = "miesnieBackLeverPL.txt";
+                    tekst2 = "ruchBackLeverPL.txt";
+                    break;
+                case 5:
+                    tekst1 = "miesnieHandStandPL.txt";
+                    tekst2 = "ruchHandStandPL.txt";
+                    break;
+            }
         }
+
     }
 
-    public void readFromText(){
-        try {
+    public void readFromText()
+    {
+        try
+        {
             reader = new BufferedReader(new InputStreamReader(getAssets().open(tekst1)));
             String mLine;
-            while ((mLine = reader.readLine()) != null) {
-                text.append(mLine); text.append('\n');
+            while ((mLine = reader.readLine()) != null)
+            {
+                text.append(mLine);
+                text.append('\n');
             }
-        } catch (IOException e) {
-            Toast.makeText(getApplicationContext(),"Wystąpił błąd przy czytaniu pliku!",Toast.LENGTH_LONG).show();
+        } catch (IOException e)
+        {
+            Toast.makeText(getApplicationContext(),
+                    R.string.blad_pliku,Toast.LENGTH_LONG).show();
             e.printStackTrace();
-        } finally {
-            if (reader != null) {
+        } finally
+        {
+            if (reader != null)
+            {
                 try {
                     reader.close();
-                } catch (IOException e) {
-                    //log the exception
-                }}}}
+                } catch (IOException e) {}
+            }
+        }
+    }
 
     public void readFromSecondText(){
         try {
@@ -189,7 +265,7 @@ public class InfoPanelActivity extends YouTubeBaseActivity
             String mLine2;
             while ((mLine2 = reader2.readLine()) != null) {text2.append(mLine2); text2.append('\n');}
         } catch (IOException e) {
-            Toast.makeText(getApplicationContext(),"Wystąpił błąd przy czytaniu pliku!",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),R.string.blad_pliku,Toast.LENGTH_LONG).show();
             e.printStackTrace();
         } finally {
             if (reader2 != null) {

@@ -13,6 +13,8 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 public class LevelPanelFragment extends Fragment implements View.OnClickListener
 {
     Button btn1, btn2, btn3, btn4, btnWithTest;
@@ -38,7 +40,7 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
         textWithProgress = rootView.findViewById(R.id.textWithProgress);
         percentProgress = rootView.findViewById(R.id.percentProgress);
         textExercise = rootView.findViewById(R.id.textExercise);
-        textLvl = rootView.findViewById(R.id.textExerciseLevel);
+        textLvl = rootView.findViewById(R.id.textFrontLvl);
         imageExercise = rootView.findViewById(R.id.imageExercise);
 
         exercises1 = rootView.findViewById(R.id.images1);
@@ -62,7 +64,13 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
     public void onStart()
     {
         super.onStart();
-        getActivity().setTitle("Poziomy trudności");
+
+        if (Locale.getDefault().getLanguage().equals(new Locale("en").getLanguage())) {
+            getActivity().setTitle("Levels");
+        }else{
+            getActivity().setTitle("Poziomy trudności");
+        }
+
 
         switch (whatExerciseWeDo)
         {
@@ -98,8 +106,8 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
         switch (whatExerciseWeDo)
         {
             case 2:
-                textExerciseLvl1.setText("Lvl 1: Pull Up");
-                textExerciseLvl2.setText("Lvl 2: High Pull Up");
+                textExerciseLvl1.setText(R.string.pull_up);
+                textExerciseLvl2.setText(R.string.high_pull_up);
                 textExerciseLvl3.setText("Lvl 3: Kipping Muscle Up");
                 textExerciseLvl4.setText("Lvl 4: Muscle Up");
 
@@ -110,7 +118,7 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
                 break;
             case 3:
                 textExerciseLvl1.setText("Lvl 1: Tuck Planche");
-                textExerciseLvl2.setText("Lvl 2: Advanced Tuck Planche");
+                textExerciseLvl2.setText(R.string.adv_planche);
                 textExerciseLvl3.setText("Lvl 3: Straddle Planche");
                 textExerciseLvl4.setText("Lvl 4: Planche");
 
@@ -122,7 +130,7 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
             case 4:
                 textExerciseLvl1.setText("Lvl 1: Skin the Cat");
                 textExerciseLvl2.setText("Lvl 2: Tuck Back Lever");
-                textExerciseLvl3.setText("Lvl 3: Adcanced Back Lever");
+                textExerciseLvl3.setText(R.string.adv_back);
                 textExerciseLvl4.setText("Lvl 4: Back Lever");
 
                 exercises1.setImageDrawable(getResources().getDrawable(R.drawable.backlvl1));
@@ -131,10 +139,10 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
                 exercises4.setImageDrawable(getResources().getDrawable(R.drawable.backlvl4));
                 break;
             case 5:
-                textExerciseLvl1.setText("Lvl 1: Pike Push Ups");
-                textExerciseLvl2.setText("Lvl 2: Advanced Pike Push Ups");
-                textExerciseLvl3.setText("Lvl 3: Wall Hand Stand Push Ups");
-                textExerciseLvl4.setText("Lvl 4: Hand Stand Push Ups");
+                textExerciseLvl1.setText(R.string.pike_pu);
+                textExerciseLvl2.setText(R.string.adv_pike);
+                textExerciseLvl3.setText(R.string.wall_pu);
+                textExerciseLvl4.setText(R.string.hs_pu);
 
                 exercises1.setImageDrawable(getResources().getDrawable(R.drawable.hslvl1));
                 exercises2.setImageDrawable(getResources().getDrawable(R.drawable.hslvl2));
@@ -150,16 +158,98 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
     @Override
     public void onClick(View view)
     {
+        final TrainingFragment trainingFragment = new TrainingFragment();
+        Bundle exercise = new Bundle();
+        int a = 0;
         switch (view.getId())
         {
             case R.id.btnTestTraining:
-
                 getFragmentManager().beginTransaction()
                         .replace(R.id.fragment_container, new FormLevelFragment())
                         .addToBackStack(null)
                         .commit();
                 break;
+            case R.id.btnTraining1:
+                switch (whatExerciseWeDo)
+                {
+                    case 1:
+                        a = 1; break;
+                    case 2:
+                        a = 5; break;
+                    case 3:
+                        a = 9; break;
+                    case 4:
+                        a = 13; break;
+                }
+                exercise.putInt("exercise", a);
+                trainingFragment.setArguments(exercise);
 
+                getFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, trainingFragment)
+                        .addToBackStack(null)
+                        .commit();
+                break;
+            case R.id.btnTraining2:
+                switch (whatExerciseWeDo)
+                {
+                    case 1:
+                        a = 2; break;
+                    case 2:
+                        a = 6; break;
+                    case 3:
+                        a = 10; break;
+                    case 4:
+                        a = 14; break;
+                }
+                exercise.putInt("exercise", a);
+                trainingFragment.setArguments(exercise);
+
+                getFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, trainingFragment)
+                        .addToBackStack(null)
+                        .commit();
+                break;
+            case R.id.btnTraining3:
+                switch (whatExerciseWeDo)
+                {
+                    case 1:
+                        a = 3; break;
+                    case 2:
+                        a = 7; break;
+                    case 3:
+                        a = 11; break;
+                    case 4:
+                        a = 15; break;
+                }
+                exercise.putInt("exercise", a);
+                trainingFragment.setArguments(exercise);
+
+                getFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, trainingFragment)
+                        .addToBackStack(null)
+                        .commit();
+                break;
+
+            case R.id.btnTraining4:
+                switch (whatExerciseWeDo)
+                {
+                    case 1:
+                        a = 4; break;
+                    case 2:
+                        a = 8; break;
+                    case 3:
+                        a = 12; break;
+                    case 4:
+                        a = 16; break;
+                }
+                exercise.putInt("exercise", a);
+                trainingFragment.setArguments(exercise);
+
+                getFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, trainingFragment)
+                        .addToBackStack(null)
+                        .commit();
+                break;
         }
     }
 
@@ -181,7 +271,7 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
                 break;
             case 2:
                 onSwitchCase2Common();
-                textLvl.setText("Lvl 2: Advanced Tuck Front Lever");
+                textLvl.setText(R.string.adv_front);
                 break;
             case 3:
                 onSwitchCase3Common();
@@ -194,6 +284,7 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
             case 5:
                 onSwitchCase4Common();
                 onSwitchCase5Common();
+                break;
         }
     }
 
@@ -201,7 +292,7 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
     {
         imageExercise.setImageDrawable(getResources().getDrawable(R.drawable.muscleuppictogram));
         textExercise.setText("Muscle Up");
-        textLvl.setText("Lvl 1: Pull Up");
+        textLvl.setText(R.string.pull_up);
         onChangeExercise(); // zmieniamy tekst z fronta na muscle upa
 
         SharedPreferences prefMuscleUp = getActivity().getSharedPreferences("NAME_MUSCLE_UP", 0);
@@ -216,11 +307,11 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
         {
             case 1:
                 onSwitchCase1Common();
-                textLvl.setText("Lvl 1: Pull Up");
+                textLvl.setText(R.string.pull_up);
                 break;
             case 2:
                 onSwitchCase2Common();
-                textLvl.setText("Lvl 2: High Pull Up");
+                textLvl.setText(R.string.high_pull_up);
                 break;
             case 3:
                 onSwitchCase3Common();
@@ -233,6 +324,7 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
             case 5:
                 onSwitchCase4Common();
                 onSwitchCase5Common();
+                break;
         }
     }
 
@@ -259,7 +351,7 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
                 break;
             case 2:
                 onSwitchCase2Common();
-                textLvl.setText("Lvl 2: Advanced Tuck Planche");
+                textLvl.setText(R.string.adv_planche);
                 break;
             case 3:
                 onSwitchCase3Common();
@@ -272,6 +364,7 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
             case 5:
                 onSwitchCase4Common();
                 onSwitchCase5Common();
+                break;
         }
     }
 
@@ -302,7 +395,7 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
                 break;
             case 3:
                 onSwitchCase3Common();
-                textLvl.setText("Lvl 3: Advanced Tuck Back Lever");
+                textLvl.setText(R.string.adv_back);
                 break;
             case 4:
                 onSwitchCase4Common();
@@ -317,35 +410,37 @@ public class LevelPanelFragment extends Fragment implements View.OnClickListener
     public void handStandLevelsPage()
     {
         imageExercise.setImageDrawable(getResources().getDrawable(R.drawable.hs_pushup));
-        textExercise.setText("Hand Stand Push Ups");
-        textLvl.setText("Lvl 1: Pike Push Ups");
+        textExercise.setText(R.string.hs);
+        textLvl.setText(R.string.pike_pu);
         onChangeExercise(); // zmieniamy tekst z fronta na HAND STAND
+
+
 
         SharedPreferences prefHandStandPU = getActivity().getSharedPreferences("NAME_HS", 0);
         int idHandStand = prefHandStandPU.getInt("keyHS",0);
 
-//        if (idHandStand != 0)
-//        {
-//            relativeLayout.setVisibility(View.GONE);
-//        }
+        if (idHandStand != 0)
+        {
+            relativeLayout.setVisibility(View.GONE);
+        }
 
         switch (idHandStand)
         {
             case 1:
                 onSwitchCase1Common();
-                textLvl.setText("Lvl 1: Pike Push Ups");
+                textLvl.setText(R.string.pike_pu);
                 break;
             case 2:
                 onSwitchCase2Common();
-                textLvl.setText("Lvl 2: Advanced Pike Push Ups");
+                textLvl.setText(R.string.adv_pike);
                 break;
             case 3:
                 onSwitchCase3Common();
-                textLvl.setText("Lvl 3: Wall Hand Stand Push Ups");
+                textLvl.setText(R.string.wall_pu);
                 break;
             case 4:
                 onSwitchCase4Common();
-                textLvl.setText("Lvl 4: Hand Stand Push Ups");
+                textLvl.setText(R.string.hs_pu);
                 break;
             case 5:
                 onSwitchCase4Common();

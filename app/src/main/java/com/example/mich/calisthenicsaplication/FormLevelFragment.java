@@ -35,11 +35,10 @@ public class FormLevelFragment extends Fragment implements View.OnClickListener
     }
 
     @Override
-    public void onStart()
-    {
+    public void onStart() {
         super.onStart();
+        getActivity().setTitle("Test");
     }
-
 
 
     @Override
@@ -53,14 +52,14 @@ public class FormLevelFragment extends Fragment implements View.OnClickListener
 
         if(pullup.matches("") || pushup.matches("") || dips.matches("") || bardips.matches("") || muscleup.matches(""))
         {
-            Toast.makeText(getActivity(), "Uzupelnij wszystkie pola!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), R.string.uzupelnij_pola, Toast.LENGTH_SHORT).show();
         }else {
             maxPull = Integer.parseInt(pullup);
             maxPush = Integer.parseInt(pushup);
             maxDips = Integer.parseInt(dips);
             maxBarDips = Integer.parseInt(bardips);
             maxMuscleUp = Integer.parseInt(muscleup);
-            Toast.makeText(getActivity(), "Pomyślnie zapisano twoje dane", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), R.string.zapisano_dane, Toast.LENGTH_SHORT).show();
         }
 
         lvlFrontAchieved();

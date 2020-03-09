@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/imageExercise"
+        android:text="@string/rozpocznij_trening"
+        android:layout_marginBottom="25dp"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="125dp"
+        android:textSize="80dp"
+        android:textStyle="bold"
+        android:text=""/>
+
+    <TextView
+        android:id="@+id/textGetReady"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:text=""/>
+
+    <ImageView
+        android:id="@+id/imageExercise"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        app:srcCompat="@drawable/tuckfront"/>
+
+    <TextView
+        android:id="@+id/textWithExercise"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/imageExercise"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:textSize="45dp"
+        android:visibility="gone"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/imagedone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        app:srcCompat="@drawable/button_zakonczone" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:scaleY="6"
+        android:progress="0"
+        android:max="100"/>
+
+    <TextView
+        android:id="@+id/textWithProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/textColor"
+        android:text="0%"/>
+
+    <Button
+        android:id="@+id/buttonFinishTraining"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:text="@string/zakoncz_trening" />
+
+</RelativeLayout>

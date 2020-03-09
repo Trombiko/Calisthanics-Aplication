@@ -11,7 +11,7 @@
 
             <item
                 android:icon="@drawable/ic_info"
-                android:title="Informacje o ćwiczeniach" />
+                android:title="@string/informacje_o_cwiczeniach" />
             <item
                 android:id="@+id/nav_front"
                 android:title="Front Lever" />
@@ -26,14 +26,19 @@
                 android:title="Back Lever" />
             <item
                 android:id="@+id/nav_hs"
-                android:title="Hand Stand Push Ups" />
+                android:title="@string/hs" />
     </group>
 
             <item
                 android:id="@+id/nav_test"
                 android:icon="@drawable/ic_fitness_center_black_24dp"
                 android:title="Test ">
-
             </item>
+
+    <item
+        android:id="@+id/nav_history"
+        android:icon="@drawable/ic_trending_up"
+        android:title="@string/historia_treningow">
+    </item>
 
 </menu>

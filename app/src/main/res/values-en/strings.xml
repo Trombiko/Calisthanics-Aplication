@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CaListH</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="element_nauczony">Learned </string>
+    <string name="pull_up">Lvl 1: Pull Up </string>
+    <string name="high_pull_up">Lvl 2: High Pull Up </string>
+    <string name="adv_planche">Lvl 2: Advanced Tuck Planche </string>
+    <string name="adv_back">Lvl 3: Advanced Tuck Back lever </string>
+    <string name="adv_front">Lvl 2: Advanced Tuck Front Lever</string>
+    <string name="pike_pu">Lvl 1: Pike push ups </string>
+    <string name="adv_pike">Lvl 2: Advanced Pike push ups </string>
+    <string name="wall_pu">Lvl 3: Wall Hand Stand push ups </string>
+    <string name="hs_pu">Lvl 4: Hand Stand push ups </string>
+
+
+    <string name="hs">Hand Stand push ups</string>
+    <string name="uzupelnij_pola">Fill the blanks!</string>
+    <string name="zapisano_dane">Your data has been saved successfully</string>
+    <string name="uzupe_nij_pola_poni_ej">Fill all the blanks!</string>
+    <string name="cwiczenie">Exercise</string>
+    <string name="podciagniecia_max">Pull up</string>
+    <string name="pompki">Push ups</string>
+    <string name="dipy">Dipy</string>
+    <string name="bar_dipy">Bar dipy</string>
+    <string name="muscle_up">Muscle Up</string>
+    <string name="zapisz_test">Save test</string>
+
+    <string name="menu">Main Menu</string>
+
+
+    <string name="informacje_o_cwiczeniach">Information about the exercises</string>
+    <string name="historia_treningow">Training history</string>
+    <string name="rozpocznij_trening">Start training</string>
+    <string name="zakoncz_trening">Finish training</string>
+
+    <string name="ready_for_training">PREPARE YOURSELF! \n Training will start soon</string>
+    <string name="click_once_more">Click once move if you are sure!</string>
+
+    <string name="blad_pliku">An error occurred while reading the file!</string>
+
+
+
+</resources>

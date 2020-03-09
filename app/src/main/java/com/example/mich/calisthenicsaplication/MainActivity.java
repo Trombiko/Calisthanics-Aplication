@@ -132,7 +132,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         .addToBackStack(null)
                         .commit();// przelaczamy sie miedzy fragmentami do Testu
                 break;
-
+            case R.id.nav_history:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, new ListViewDatabase())
+                        .addToBackStack(null)
+                        .commit();
+                break;
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;

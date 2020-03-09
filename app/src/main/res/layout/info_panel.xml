@@ -61,7 +61,7 @@
                 android:layout_marginTop="8dp"/>
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textMuscleUpLvl"
                 android:layout_below="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

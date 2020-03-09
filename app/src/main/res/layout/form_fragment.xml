@@ -18,7 +18,7 @@
         android:textStyle="bold"
         android:textSize="37sp"
         android:layout_marginTop="10dp"
-        android:text="Uzupełnij pola poniżej" />
+        android:text="@string/uzupe_nij_pola_poni_ej" />
 
     <ImageView
         android:id="@+id/linia"
@@ -56,7 +56,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="     Ćwiczenie    "
+                    android:text="@string/cwiczenie"
                     android:layout_margin="1dp"
                     android:layout_column="0"
                     android:textSize="32dp"
@@ -95,7 +95,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text=" Podciągnięcia"
+                    android:text="@string/podciagniecia_max"
                     android:layout_margin="1dp"
                     android:layout_column="0"
                     android:background="#FFFFFF"
@@ -129,7 +129,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text=" Pompki"
+                    android:text="@string/pompki"
                     android:layout_margin="1dp"
                     android:layout_column="0"
                     android:background="#FFFFFF"
@@ -163,7 +163,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text=" Dipy"
+                    android:text="@string/dipy"
                     android:layout_margin="1dp"
                     android:layout_column="0"
                     android:background="#FFFFFF"
@@ -195,7 +195,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text=" Bar dipy"
+                    android:text="@string/bar_dipy"
                     android:layout_margin="1dp"
                     android:layout_column="0"
                     android:background="#FFFFFF"
@@ -227,7 +227,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text=" Muscle Up"
+                    android:text="@string/muscle_up"
                     android:layout_margin="1dp"
                     android:layout_column="0"
                     android:background="#FFFFFF"
@@ -253,7 +253,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
-                android:text="Zapisz test" />
+                android:text="@string/zapisz_test" />
 
 
         </TableLayout>
